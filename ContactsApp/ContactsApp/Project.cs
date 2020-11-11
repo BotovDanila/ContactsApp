@@ -9,7 +9,7 @@ namespace ContactsApp
     /// <summary>
     /// Класс, содержащий список всех контактов
     /// </summary>
-    class Project
+  public  class Project
     {
       public List<Contact> _contactList;
 

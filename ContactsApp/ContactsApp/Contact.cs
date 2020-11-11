@@ -16,9 +16,10 @@ namespace ContactsApp
         private PhoneNumber _number;
         private DateTime _birthDate;
         private string _vkId;
-        
+        private string _email;
+
         /// <summary>
-        /// Фамилия не може быть больше 50 символов
+        /// Фамилия не может быть больше 50 символов
         /// </summary>
         public string Surname
         {
@@ -29,12 +30,12 @@ namespace ContactsApp
                 {
                     throw new ArgumentException("Фамилия должна содержать меньше 50 символов");
                 }
-                _surname = value.Substring(0, 1).ToUpper() + value.Substring(2).ToLower();
+                _surname = value.Substring(0, 1).ToUpper() + value.Substring(1).ToLower();
             }
         }
 
         /// <summary>
-        /// Имя не може быть больше 50 символов
+        /// Имя не может быть больше 50 символов
         /// </summary>
         public string Name
         {
@@ -43,9 +44,9 @@ namespace ContactsApp
             {
                 if(value.Length>50)
                 {
-                    throw new ArgumentException("Имя должна содержать меньше 50 символов");
+                    throw new ArgumentException("Имя должно содержать меньше 50 символов");
                 }
-                _name = value.Substring(0, 1).ToUpper() + value.Substring(2).ToLower(); ;
+                _name = value.Substring(0, 1).ToUpper() + value.Substring(1).ToLower(); ;
             }
         }
 
@@ -90,6 +91,23 @@ namespace ContactsApp
                     throw new ArgumentException("Дата рождения не может быть более текущей даты и не может быть менее 1900 года");
                 }
                 _birthDate = value;
+            }
+        }
+
+        /// <summary>
+        /// ВКайди контакта, ограничение в 15 символов
+        /// </summary>
+        public string Email
+        {
+            get { return _email; }
+            set
+            {
+                if (value.Length > 50)
+                {
+                    throw new ArgumentException("максимальное количество символов = 50!");
+                }
+                              
+                _email = value;                
             }
         }
     }

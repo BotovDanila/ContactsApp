@@ -17,7 +17,7 @@ namespace ContactsApp
             get { return _number; }
             set
             {
-                if(value<0 || value!=11)
+                if(value<0 && value!=11)
                 {
                     throw new ArgumentException("Номер телефона должен содержать 11 цифр");
                 }

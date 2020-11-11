@@ -8,8 +8,13 @@ using Newtonsoft.Json;
 
 namespace ContactsApp
 {
-   static class ProjectManager
+   public static class ProjectManager
     {
+        /// <summary>
+        /// Функция, выполняющая функцию сериализации
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="filename"></param>
         public static void SaveToFile(Project data, string filename)
         {
             JsonSerializer serializer = new JsonSerializer();
@@ -20,7 +25,11 @@ namespace ContactsApp
                 serializer.Serialize(writer,data);
             }
         }
-
+        /// <summary>
+        /// Функция, выполняющая функцию десериализации
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns></returns>
         public static Project LoadFromFile(string filename)
         {
             JsonSerializer serializer = new JsonSerializer();
