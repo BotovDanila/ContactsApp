@@ -18,6 +18,10 @@ namespace ContactsApp
         public static void SaveToFile(Project data, string filename)
         {
             JsonSerializer serializer = new JsonSerializer();
+           /*{
+                Formatting  = Formatting.Indented;
+                TypeNameHanding = TypeNameHandling.All;
+            };*/
             using (StreamWriter sw = new StreamWriter(filename))
             using (JsonWriter writer = new JsonTextWriter(sw))
             {

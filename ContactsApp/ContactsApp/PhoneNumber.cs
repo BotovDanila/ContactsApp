@@ -17,14 +17,14 @@ namespace ContactsApp
             get { return _number; }
             set
             {
-                if(value<0 && value!=11)
+               /* if(value<0 && value!=11)
                 {
                     throw new ArgumentException("Номер телефона должен содержать 11 цифр");
                 }
                 else if(value/10000000000!=7)
                 {
                     throw new ArgumentException("Номер телефона должен начинаться на +7");
-                }
+                }*/
                 _number = value;
             }
         }

@@ -110,5 +110,11 @@ namespace ContactsApp
                 _email = value;                
             }
         }
+        public override string ToString()
+        {
+            var name = Name;
+            var surname = Surname;
+            return name + " " + surname;
+        }
     }
 }
