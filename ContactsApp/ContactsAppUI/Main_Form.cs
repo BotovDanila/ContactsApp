@@ -78,7 +78,7 @@ namespace ContactsAppUI
         {
             if (formlist.Count != 0)
             {
-                var index = ContactsListBox1.SelectedIndex;
+                var index = ContactsListBox.SelectedIndex;
                 Contact selectedContact = index == -1 ? formlist.Last() : formlist[index];
                 NameTextBox.Text = selectedContact.Name;
                 SurnameTextBox.Text = selectedContact.Surname;
@@ -111,7 +111,7 @@ namespace ContactsAppUI
             {
                 formlist=new BindingList<Contact>();
             }
-            ContactsListBox1.DataSource = formlist;
+            ContactsListBox.DataSource = formlist;
         }
 
         
@@ -128,7 +128,7 @@ namespace ContactsAppUI
         private void EditButton_Click(object sender, EventArgs e)
         {
             EditForm editForm = new EditForm();
-            editForm.current = formlist[ContactsListBox1.SelectedIndex];
+            editForm.current = formlist[ContactsListBox.SelectedIndex];
             DialogResult result=editForm.ShowDialog();
             if(result==DialogResult.Cancel)
             {
@@ -136,7 +136,7 @@ namespace ContactsAppUI
             }
             else if(result==DialogResult.OK)
             {
-                formlist[ContactsListBox1.SelectedIndex] = editForm.current;
+                formlist[ContactsListBox.SelectedIndex] = editForm.current;
                 editForm.Close();
             }
             RefreshContactInfo();
@@ -180,7 +180,7 @@ namespace ContactsAppUI
         {
             if (MessageBox.Show("Вы действительно хотите удалить данный контакт?", "Удалить контакт", MessageBoxButtons.YesNo)==DialogResult.Yes)
             {
-                formlist.Remove((Contact)ContactsListBox1.SelectedItem);
+                formlist.Remove((Contact)ContactsListBox.SelectedItem);
                 RefreshContactInfo();
             }
            
