@@ -105,10 +105,12 @@ namespace ContactsAppUI
         {
             if (File.Exists(filepath + @"\" + filename))
             {
-                formlist = new BindingList<Contact>(ProjectManager.LoadFromFile(filepath + @"\" + filename)._contactList);
+                project = ProjectManager.LoadFromFile(filepath + @"\" + filename);
+                formlist = new BindingList<Contact>(project._contactList);
             }
             else
             {
+                project = new Project();
                 formlist = new BindingList<Contact>();
             }
             ContactsListBox.DataSource = formlist;
@@ -260,6 +262,19 @@ namespace ContactsAppUI
                     SortContactsListBox();
                 }
             }
+        }
+
+        private void ContactsListBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                RemoveButton_Click(null, null);
+            }
+        }
+
+        private void Main_Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ProjectManager.SaveToFile(project, (filepath + @"\" + filename));
         }
     }
 }
