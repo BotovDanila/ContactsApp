@@ -62,7 +62,7 @@ namespace ContactsAppUI
         }
         private void BanSpecialSymbols(object sender, KeyPressEventArgs e)
         {
-            var reg = new Regex(@"[^a-zA-Z0-9\b\s]");
+            var reg = new Regex(@"[^a-zA-Z0-9,@,.\b\s]");
             if ((reg.IsMatch(e.KeyChar.ToString())))
             {
                 e.Handled = true;
@@ -70,6 +70,11 @@ namespace ContactsAppUI
             }
             else
                 this.BackColor = Color.White;
+        }
+
+        private void EmailTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

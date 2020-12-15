@@ -40,9 +40,9 @@
             this.VkIdTextBox = new System.Windows.Forms.TextBox();
             this.BirthDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.PhoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.OKButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
-            this.PhoneMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,6 +131,7 @@
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(170, 20);
             this.EmailTextBox.TabIndex = 9;
+            this.EmailTextBox.TextChanged += new System.EventHandler(this.EmailTextBox_TextChanged);
             this.EmailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.BanSpecialSymbols);
             // 
             // VkIdTextBox
@@ -179,6 +180,15 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(420, 264);
             this.tableLayoutPanel1.TabIndex = 12;
             // 
+            // PhoneMaskedTextBox
+            // 
+            this.PhoneMaskedTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PhoneMaskedTextBox.Location = new System.Drawing.Point(225, 140);
+            this.PhoneMaskedTextBox.Mask = "+70000000000";
+            this.PhoneMaskedTextBox.Name = "PhoneMaskedTextBox";
+            this.PhoneMaskedTextBox.Size = new System.Drawing.Size(179, 20);
+            this.PhoneMaskedTextBox.TabIndex = 12;
+            // 
             // OKButton
             // 
             this.OKButton.Location = new System.Drawing.Point(305, 297);
@@ -198,15 +208,6 @@
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
-            // 
-            // PhoneMaskedTextBox
-            // 
-            this.PhoneMaskedTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PhoneMaskedTextBox.Location = new System.Drawing.Point(225, 140);
-            this.PhoneMaskedTextBox.Mask = "+70000000000";
-            this.PhoneMaskedTextBox.Name = "PhoneMaskedTextBox";
-            this.PhoneMaskedTextBox.Size = new System.Drawing.Size(179, 20);
-            this.PhoneMaskedTextBox.TabIndex = 12;
             // 
             // EditForm
             // 

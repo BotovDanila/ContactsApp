@@ -9,7 +9,7 @@ namespace ContactsApp
     /// <summary>
     /// Класс,описывающий контакт
     /// </summary>
-    public class Contact
+    public class Contact : IComparable<Contact> 
     {
         private string _surname;
         private string _name;
@@ -115,6 +115,11 @@ namespace ContactsApp
             var name = Name;
             var surname = Surname;
             return name + " " + surname;
+        }
+
+        public int CompareTo(Contact comparedObj)
+        {
+            return this.Surname.CompareTo(comparedObj.Surname);
         }
     }
 }

@@ -61,6 +61,9 @@
             this.SurnameTextBox = new System.Windows.Forms.TextBox();
             this.BirthDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.PhoneMaskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BirthdayLabel = new System.Windows.Forms.Label();
             this.FindTableLayout.SuspendLayout();
             this.ContactsTableLayout.SuspendLayout();
             this.ButtonsLeftTableLayout.SuspendLayout();
@@ -101,6 +104,7 @@
             this.FindTextBox.Size = new System.Drawing.Size(110, 20);
             this.FindTextBox.TabIndex = 1;
             this.FindTextBox.TextChanged += new System.EventHandler(this.FindTextBox_TextChanged);
+            this.FindTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FindTextBox_KeyDown);
             // 
             // ContactsTableLayout
             // 
@@ -212,7 +216,9 @@
             // FileToolStripMenuItem
             // 
             this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ExitToolStripMenuItem});
+            this.ExitToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.loadToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
             this.FileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.FileToolStripMenuItem.Text = "File";
@@ -220,7 +226,7 @@
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ExitToolStripMenuItem.Text = "Exit";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -416,11 +422,38 @@
             this.PhoneMaskedTextBox1.Size = new System.Drawing.Size(370, 20);
             this.PhoneMaskedTextBox1.TabIndex = 15;
             // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Text = "Load";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
+            // 
+            // BirthdayLabel
+            // 
+            this.BirthdayLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BirthdayLabel.AutoSize = true;
+            this.BirthdayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BirthdayLabel.Location = new System.Drawing.Point(342, 383);
+            this.BirthdayLabel.Name = "BirthdayLabel";
+            this.BirthdayLabel.Size = new System.Drawing.Size(57, 16);
+            this.BirthdayLabel.TabIndex = 8;
+            this.BirthdayLabel.Text = "Birthday";
+            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 450);
+            this.Controls.Add(this.BirthdayLabel);
             this.Controls.Add(this.RigftHalfTableLayout);
             this.Controls.Add(this.LeftHalfTableLayout);
             this.Controls.Add(this.MainWindowMenuStrip);
@@ -477,6 +510,9 @@
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.Label BirthdayLabel;
     }
 }
 
