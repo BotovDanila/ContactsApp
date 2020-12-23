@@ -104,4 +104,12 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>md $(SolutionDir)InstallScript
+md $(SolutionDir)InstallScript\Release
+xcopy $(ProjectDir)$(OutDir)*.dll $(SolutionDir)InstallScript\Release
+xcopy $(ProjectDir)$(OutDir)*.exe $(SolutionDir)InstallScript\Release
+call $(SolutionDir)InstallScript\install.iss
+rd /s $(SolutionDir)InstallScript\Release</PostBuildEvent>
+  </PropertyGroup>
 </Project>
